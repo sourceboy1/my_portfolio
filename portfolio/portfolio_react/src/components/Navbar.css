@@ -1,0 +1,69 @@
+/* Basic styling for the navbar */
+.navbar {
+    position: fixed;
+    top: -70px; /* Initially hides the navbar above the page */
+    left: 0;
+    right: 0;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    z-index: 1000;
+    transition: top 0.3s ease;
+    margin-top: 60px;
+    padding-bottom: 30px;
+}
+
+/* Navbar content */
+.navbar-left h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.navbar-right {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+    align-items: center; /* Align items vertically */
+}
+
+.navbar-right a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+/* On hover, change the color of the links */
+.navbar-right a:hover {
+    color: #FB8F67;
+}
+
+/* Style for the Hire Me button */
+.hire-button {
+    background-color: #FB8F67;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+/* On hover, change the button color */
+.hire-button:hover {
+    background-color: #1E2019;
+}
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+    .navbar {
+        display: none; /* Hide the navbar on mobile screens */
+    }
+}
+
+/* Spacing for the page content */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}

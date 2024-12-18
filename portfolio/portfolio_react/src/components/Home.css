@@ -1,0 +1,73 @@
+/* General styles for the home container */
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f9f9f9; /* Light background for a clean look */
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Flex container for content */
+.home-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column; /* Stack image, text, and typing effect vertically */
+    text-align: center;
+    gap: 20px; /* Space between elements */
+}
+
+/* Styling the image */
+.home-img {
+    width: 200px; /* Larger image */
+    height: 200px;
+    border-radius: 50%; /* Circular image */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+    object-fit: cover; /* Ensures the image fits perfectly */
+    border: 5px solid #ffffff; /* White border for emphasis */
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.home-img:hover {
+    transform: scale(1.1); /* Slight zoom-in on hover */
+}
+
+/* Text container styles */
+.im-text {
+    font-size: 1.5rem; /* Slightly larger font */
+    color: #333;
+    font-weight: 500;
+    margin: 0;
+}
+
+.home-name {
+    font-size: 3rem; /* Bigger name font */
+    color: #007bff; /* Eye-catching blue for the name */
+    font-weight: 700;
+    margin: 5px 0; /* Space between "I'm" and the name */
+}
+
+.typing-effect {
+    font-size: 1.8rem; /* Slightly larger font for typing effect */
+    color: #555;
+    font-weight: 400;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* Add responsiveness */
+@media (max-width: 768px) {
+    .home-img {
+        width: 150px; /* Slightly smaller image for mobile */
+        height: 150px;
+    }
+
+    .home-name {
+        font-size: 2.5rem; /* Adjust name size for mobile */
+    }
+
+    .typing-effect {
+        font-size: 1.5rem; /* Adjust typing effect size */
+    }
+}
