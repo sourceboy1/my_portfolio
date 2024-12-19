@@ -1,0 +1,121 @@
+/* Container to wrap the image and content */
+.about-container {
+    display: flex; /* Flexbox to arrange image and content side by side */
+    align-items: center; /* Vertically center the content */
+    padding: 40px;
+    background-color: white;
+    margin: 40px auto;
+    max-width: 1100px;
+    margin-top: 150px;
+}
+
+/* Profile Image Styles */
+.about-image {
+    flex: 0 0 auto; /* Prevent the image from resizing */
+    margin-right: 30px; /* Space between the image and content */
+}
+
+.about-profile-image {
+    width: 340px; /* Fixed size for the image */
+    height: 340px;
+    object-fit: cover; /* Ensures image fills the square */
+    border-radius: 10px; /* Optional: rounded corners */
+    border: 3px solid #ddd; /* Border around the image */
+}
+
+/* Content Section */
+.about-content {
+    flex: 1; /* Allow the content to take the remaining space */
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Title for the profession */
+.about-content h2 {
+    font-size: 2rem;
+    color: #007bff;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Paragraph Description */
+.about-content p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Detailed Information about the person */
+.about-details {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping */
+    gap: 20px; /* Space between columns */
+}
+
+.about-detail-item {
+    flex: 1 1 45%; /* Set two columns with space between them */
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Hire Me Button */
+.hire-button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer;
+    margin-top: 20px; /* Space above the button */
+    transition: background-color 0.3s ease;
+}
+
+.hire-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column; /* Stack the image and content on smaller screens */
+        text-align: center; /* Center content on mobile */
+    }
+
+    .about-image {
+        margin-right: 0; /* Remove the margin on smaller screens */
+        margin-bottom: 20px; /* Space below the image */
+    }
+
+    .about-profile-image {
+        width: 150px; /* Reduce image size on small screens */
+        height: 150px;
+    }
+
+    /* Adjust the layout of the about details for smaller screens */
+    .about-details {
+        flex-direction: column; /* Stack details vertically on small screens */
+        gap: 10px; /* Smaller gap between items */
+    }
+
+    .about-detail-item {
+        flex: 1 1 100%; /* Make each item take full width on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .about-container {
+        padding: 20px;
+    }
+
+    .about-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-content p {
+        font-size: 1rem;
+    }
+
+    .about-detail-item {
+        font-size: 1rem;
+    }
+}

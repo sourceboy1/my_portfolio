@@ -1,0 +1,110 @@
+.skills-progress {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two skills per row */
+    gap: 20px; /* Spacing between skills */
+    padding: 20px;
+    margin-top: 180px;
+}
+
+/* Individual skill container */
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #f9f9f9; /* Light gray background */
+    border: 1px solid #e0e0e0; /* Subtle border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+/* Skill name and percentage */
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 8px; /* Space between info and bar */
+}
+
+/* Progress bar container */
+.skill-bar {
+    width: 100%;
+    height: 8px; /* Height of the progress bar */
+    background: #e0e0e0; /* Light gray for the background bar */
+    border-radius: 4px; /* Rounded edges */
+    overflow: hidden; /* Ensure progress stays within bar */
+}
+
+/* The progress itself */
+.skill-progress {
+    height: 100%;
+    border-radius: 4px; /* Match bar's rounded edges */
+    transition: width 0.2s ease-in-out; /* Smooth transition for progress */
+}
+
+/* Mobile Responsiveness */
+
+/* Tablet and below (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .skills-progress {
+        grid-template-columns: 1fr; /* One skill per row on tablets */
+        padding: 15px; /* Reduced padding for smaller screens */
+        margin-top: 120px; /* Adjusted margin */
+    }
+
+    .skill-info {
+        font-size: 0.9rem; /* Slightly smaller font size for skill name/percentage */
+    }
+
+    .skill-bar {
+        height: 6px; /* Reduced height for progress bar on smaller screens */
+    }
+
+    .skill-progress {
+        border-radius: 3px; /* Slightly smaller rounded corners */
+    }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    .skills-progress {
+        grid-template-columns: 1fr; /* One skill per row */
+        padding: 10px; /* Reduced padding for small screens */
+        margin-top: 100px; /* Reduced top margin */
+    }
+
+    .skill-info {
+        font-size: 0.85rem; /* Even smaller font size */
+    }
+
+    .skill-bar {
+        height: 5px; /* Further reduced height for progress bar */
+    }
+
+    .skill-progress {
+        border-radius: 2px; /* Further reduced rounded corners */
+    }
+}
+
+/* Small mobile screens (max-width: 480px) */
+@media (max-width: 480px) {
+    .skills-progress {
+        grid-template-columns: 1fr; /* Keep one skill per row */
+        padding: 10px; /* Further reduced padding */
+        margin-top: 80px; /* Reduced margin for very small screens */
+    }
+
+    .skill-info {
+        font-size: 0.8rem; /* Smallest font size */
+    }
+
+    .skill-bar {
+        height: 4px; /* Minimum height for progress bar */
+    }
+
+    .skill-progress {
+        border-radius: 2px; /* Keep consistent rounded corners */
+    }
+}

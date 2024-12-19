@@ -1,0 +1,83 @@
+/* About Section */
+.about-section {
+    position: relative;
+    text-align: center;
+    padding: 80px 20px; /* Add padding for spacing */
+    background-color: white; /* Light background for contrast */
+}
+
+/* Large Traced "ABOUT" */
+.traced-text {
+    font-size: 13rem; /* Larger size for "ABOUT" */
+    color: rgba(0, 0, 0, 0.06); /* Faded black color */
+    font-weight: bold;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center both horizontally and vertically */
+    z-index: 1; /* Place behind the "About Me" text */
+    pointer-events: none; /* Make it unselectable */
+    white-space: nowrap;
+}
+
+/* Colored "About Me" */
+.colored-text {
+    font-size: 3.5rem; /* Slightly larger "About Me" text */
+    color: #007bff; /* Bright blue color */
+    font-weight: bold;
+    position: absolute;
+    top: 100%; /* Same vertical position as "ABOUT" */
+    left: 50%; /* Same horizontal position as "ABOUT" */
+    transform: translate(-50%, -50%); /* Align perfectly with "ABOUT" */
+    z-index: 2; /* Place in front of the "ABOUT" text */
+}
+
+
+
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+    /* Reduce font size of "ABOUT" */
+    .traced-text {
+        font-size: 10rem;
+    }
+
+    /* Adjust "About Me" text size */
+    .colored-text {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Further reduce font size for smaller screens */
+    .traced-text {
+        font-size: 8rem;
+    }
+
+    /* Adjust "About Me" text size even smaller */
+    .colored-text {
+        font-size: 2rem;
+    }
+
+    /* Add padding to make content more readable on smaller screens */
+    .about-section {
+        padding: 60px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Make "ABOUT" text even smaller for very small screens */
+    .traced-text {
+        font-size: 6rem;
+    }
+
+    /* Further adjust "About Me" text size for small screens */
+    .colored-text {
+        font-size: 1.8rem;
+    }
+
+    /* Ensure the section is not crowded on very small screens */
+    .about-section {
+        padding: 40px 20px;
+    }
+}

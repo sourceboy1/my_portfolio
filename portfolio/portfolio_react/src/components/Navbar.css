@@ -1,69 +1,97 @@
-/* Basic styling for the navbar */
+/* Basic Navbar Styling */
 .navbar {
     position: fixed;
-    top: -70px; /* Initially hides the navbar above the page */
-    left: 0;
-    right: 0;
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    z-index: 1000;
-    transition: top 0.3s ease;
-    margin-top: 60px;
-    padding-bottom: 30px;
-}
-
-/* Navbar content */
-.navbar-left h1 {
-    margin: 0;
-    font-size: 1.5em;
-}
-
-.navbar-right {
+    top: 0;
+    width: 100%;
     display: flex;
-    gap: 20px;
-    justify-content: flex-end;
-    align-items: center; /* Align items vertically */
+    justify-content: center; /* Center the navbar links */
+    align-items: center;
+    padding: 25px 250px 23px;
+    background-color: rgba(255, 255, 255, 0.9); /* Transparent background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: top 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+    z-index: 1000;
 }
 
-.navbar-right a {
-    color: white;
+.navbar.hidden {
+    top: -80px; /* Hide navbar when scrolling down */
+}
+
+.navbar.visible {
+    top: 0; /* Show navbar when scrolling up */
+}
+
+/* Navbar Links */
+.navbar a {
     text-decoration: none;
-    font-size: 1.2em;
+    margin: 0 20px; /* Increased spacing for better layout */
+    font-size: 1rem;
+    color: #333;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
-/* On hover, change the color of the links */
-.navbar-right a:hover {
-    color: #FB8F67;
+.navbar a:hover {
+    color: #007bff; /* Highlight color */
 }
 
-/* Style for the Hire Me button */
+/* Hire Me Button */
 .hire-button {
-    background-color: #FB8F67;
     padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 1.2em;
-    font-weight: bold;
+    background-color: #007bff;
     color: white;
-    text-decoration: none;
-    transition: background-color 0.3s;
+    border: none;
+    border-radius: 25px; /* Rounded button */
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-left: auto; /* Push to the far right */
 }
 
-/* On hover, change the button color */
 .hire-button:hover {
-    background-color: #1E2019;
+    background-color: #0056b3;
+    transform: translateY(-2px); /* Lift effect */
 }
 
-/* Media query for screens smaller than 768px */
-@media (max-width: 768px) {
+/* Remove pointer cursor from react-scroll Link elements */
+.navbar a, .navbar .hire-button {
+    cursor: default;  /* Keep default cursor */
+}
+
+
+/* Hide Navbar on Mobile */
+@media (max-width: 425px) {
     .navbar {
-        display: none; /* Hide the navbar on mobile screens */
+        display: none; /* Completely hide navbar on mobile */
     }
 }
 
-/* Spacing for the page content */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+/* Medium Screens (768px) */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 50px; /* Adjust padding */
+    }
+    .hire-button {
+        margin-left: 80px; /* Shift button farther out */
+        padding: 8px 18px; /* Adjust button size */
+    }
+    .navbar a {
+        margin: 0 10px; /* Adjust link spacing */
+        font-size: 0.9rem; /* Smaller font size for links */
+    }
+}
+
+/* Large Screens (1024px) */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 20px 100px; /* Adjust padding */
+    }
+    .hire-button {
+        margin-left: 40px; /* Shift button outward */
+        padding: 10px 20px; /* Default button size */
+    }
+    .navbar a {
+        margin: 0 15px; /* Adjust link spacing */
+    }
 }

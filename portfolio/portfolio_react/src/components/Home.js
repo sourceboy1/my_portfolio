@@ -15,20 +15,17 @@ function Home() {
         let timeout;
 
         if (!isDeleting && text === skills[index]) {
-            // Pause before starting to delete
             timeout = setTimeout(() => setIsDeleting(true), pauseDuration);
         } else if (isDeleting && text === '') {
-            // Move to the next skill after deleting
             setIsDeleting(false);
             setIndex((prevIndex) => (prevIndex + 1) % skills.length);
         } else {
-            // Typing or deleting logic
             const currentSkill = skills[index];
             timeout = setTimeout(() => {
                 setText((prevText) =>
                     isDeleting
-                        ? currentSkill.substring(0, prevText.length - 1) // Delete one character
-                        : currentSkill.substring(0, prevText.length + 1) // Add one character
+                        ? currentSkill.substring(0, prevText.length - 1)
+                        : currentSkill.substring(0, prevText.length + 1)
                 );
             }, isDeleting ? deletingSpeed : typingSpeed);
         }
@@ -39,11 +36,24 @@ function Home() {
     return (
         <div className="home">
             <div className="home-content">
-                <img src={myImage} alt="Akanni Oluwaseun" className="home-img" />
-                <h2 className="im-text">I'm</h2>
-                <h1 className="home-name">Akanni Oluwaseun</h1>
-                <div className="typing-effect">
-                    <span>{text}</span>
+                <div className="image-section">
+                    <img src={myImage} alt="Akanni Oluwaseun" className="home-img" />
+                </div>
+                <div className="text-section">
+                    <h2 className="im-text">I'm</h2>
+                    <h1 className="home-name">Akanni Oluwaseun</h1>
+                    <div className="typing-effect">
+                        <span>{text}</span>
+                    </div>
+                    {/* Download CV Button */}
+                    <a
+                        href="/Akanni Oluwaseun cv.pdf" // Path to the file in the public directory
+                        download="Akanni Oluwaseun CV.pdf" // Filename for the downloaded file
+                        className="download-cv-btn"
+                    >
+                        Download CV
+                    </a>
+
                 </div>
             </div>
         </div>

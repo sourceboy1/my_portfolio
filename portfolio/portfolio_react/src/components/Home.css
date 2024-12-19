@@ -1,73 +1,111 @@
-/* General styles for the home container */
 .home {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background-color: #f9f9f9; /* Light background for a clean look */
+    height: 100vh;
+    background-color: rgb(174, 174, 207);
     padding: 20px;
-    font-family: Arial, sans-serif;
 }
 
-/* Flex container for content */
 .home-content {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    flex-direction: column; /* Stack image, text, and typing effect vertically */
-    text-align: center;
-    gap: 20px; /* Space between elements */
+    max-width: 1200px;
+    width: 100%;
+    gap: 80px; /* Increased spacing for a better layout */
 }
 
-/* Styling the image */
+.image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
 .home-img {
-    width: 200px; /* Larger image */
-    height: 200px;
-    border-radius: 50%; /* Circular image */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow */
-    object-fit: cover; /* Ensures the image fits perfectly */
-    border: 5px solid #ffffff; /* White border for emphasis */
-    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+    width: 370px;
+    height: 370px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #ccc;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow for better aesthetics */
 }
 
-.home-img:hover {
-    transform: scale(1.1); /* Slight zoom-in on hover */
+.text-section {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
 }
 
-/* Text container styles */
 .im-text {
-    font-size: 1.5rem; /* Slightly larger font */
+    font-size: 2.5rem;
     color: #333;
-    font-weight: 500;
     margin: 0;
 }
 
 .home-name {
-    font-size: 3rem; /* Bigger name font */
-    color: #007bff; /* Eye-catching blue for the name */
-    font-weight: 700;
-    margin: 5px 0; /* Space between "I'm" and the name */
+    font-size: 3.5rem;
+    color: #222;
+    font-weight: bold;
+    margin: 5px 0;
 }
 
 .typing-effect {
-    font-size: 1.8rem; /* Slightly larger font for typing effect */
-    color: #555;
-    font-weight: 400;
-    margin-top: 10px;
-    font-style: italic;
+    font-size: 1.7rem;
+    color: #333;
+    font-weight: bold;
 }
 
-/* Add responsiveness */
+/* New Button Styles */
+.download-cv-btn {
+    margin-top: 20px;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background-color: #007bff; /* Primary color */
+    border: none;
+    border-radius: 25px; /* Rounded edges */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+}
+
+.download-cv-btn:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
+    .home-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .text-section {
+        align-items: center;
+    }
+
     .home-img {
-        width: 150px; /* Slightly smaller image for mobile */
-        height: 150px;
+        width: 250px;
+        height: 250px;
     }
 
     .home-name {
-        font-size: 2.5rem; /* Adjust name size for mobile */
+        font-size: 2.8rem;
     }
 
     .typing-effect {
-        font-size: 1.5rem; /* Adjust typing effect size */
+        font-size: 1.5rem;
+    }
+
+    .download-cv-btn {
+        font-size: 1rem;
+        padding: 10px 16px;
     }
 }
